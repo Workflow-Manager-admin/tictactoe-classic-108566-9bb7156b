@@ -1,0 +1,112 @@
+:root {
+  --ttt-primary: #ffffff;
+  --ttt-secondary: #222222;
+  --ttt-accent: #4caf50;
+  --ttt-border: #ddd;
+}
+
+.ttt-container {
+  margin: 0 auto;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--ttt-primary);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px 0 rgba(32, 32, 32, 0.12);
+  padding: 32px 24px 24px;
+  min-width: 320px;
+  max-width: 360px;
+}
+
+.ttt-turn-label {
+  font-size: 1.25rem;
+  color: var(--ttt-secondary);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(3, 60px);
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ttt-cell {
+  width: 60px;
+  height: 60px;
+  background: var(--ttt-primary);
+  border: 2px solid var(--ttt-secondary);
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ttt-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.16s, border-color 0.18s;
+  cursor: pointer;
+  outline: none;
+}
+
+.ttt-cell.filled,
+.ttt-cell:disabled {
+  background: #f6f6f6;
+  color: var(--ttt-accent);
+  cursor: not-allowed;
+  border-color: #bdbdbd;
+}
+
+.ttt-cell:focus:not(:disabled) {
+  border-color: var(--ttt-accent);
+  background: #f0ffe5;
+}
+
+.ttt-footer {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.ttt-status-message {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  min-height: 24px;
+  color: var(--ttt-secondary);
+}
+
+.ttt-status-message.ttt-winner {
+  color: var(--ttt-accent);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ttt-status-message.ttt-draw {
+  color: #888;
+}
+
+.ttt-reset-btn {
+  margin-top: 0px;
+  background: var(--ttt-accent);
+  color: var(--ttt-primary);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: 550;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(44, 44, 44, 0.06);
+  transition: background 0.18s;
+}
+
+.ttt-reset-btn:hover,
+.ttt-reset-btn:focus {
+  background: #179d37;
+}
